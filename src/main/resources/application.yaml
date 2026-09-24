@@ -1,3 +1,6 @@
 spring:
   application:
     name: platform
+    version: 1.0
+  banner:
+    location: classpath:banner.txt
