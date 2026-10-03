@@ -9,13 +9,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "inventory_balance")
+@Table(name = "inventory_balance", uniqueConstraints = @UniqueConstraint(
+    name = "uk_inventory_balance_ingredient_warehouse",
+    columnNames = {"ingredient_id", "warehouse_id"}))
 public class InventoryBalance {
 
     @Id
